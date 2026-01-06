@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article class="post">
+  <!-- Front Matter Section -->
+  <div class="front-matter">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <h4 class="post-subtitle">{{ page.subtitle }}</h4>
+    {% endif %}
+    <div class="bylines">
+      <div class="byline">
+        <h3>Published</h3>
+        <p>{{ page.date | date: '%d %B %Y' }}</p>
+      </div>
+      {% if page.author %}
+      <div class="byline">
+        <h3>Author</h3>
+        <p>{{ page.author }}</p>
+      </div>
+      {% endif %}
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <!-- Post Content -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <!-- Bibliography Section -->
+  {% if page.bibliography %}
+  <div class="bibliography">
+    {% bibliography --cited %}
+  </div>
+  {% endif %}
+</article>

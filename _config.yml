@@ -1,0 +1,92 @@
+# Site settings
+title: "Hello, Harry"
+description: "\"A mathematician is a machine for turning coffee into theorems.\"  —  <a href=\"https://en.wikipedia.org/wiki/Alfr%C3%A9d_R%C3%A9nyi\" target=\"_blank\" rel=\"noopener\">Alfréd Rényi</a>"
+baseurl: ""
+url: "https://awc789.github.io"
+
+# Author information
+author:
+  name: "Harry"
+  email: "me@harrywang9917.com"
+  github: "harrywang9917"
+  twitter: "harrywang9917"
+  linkedin: "harrywang9917"
+  telegram: "harrywang9917"
+
+# Theme style
+style: light  # light or dark
+
+# Footer text
+footer: 'Connect with me via <a href="mailto:me@harrywang9917.com">Email</a>'
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# Kramdown settings for better math support
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-scholar
+  - jekyll-seo-tag
+
+# Jekyll Scholar settings for academic citations
+scholar:
+  style: apa
+  locale: en
+  source: ./_bibliography
+  bibliography: references.bib
+  bibliography_template: bibliography
+  replace_strings: true
+  join_strings: true
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_permalink: /bibliography/:key.html
+  query: "@*"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Include files
+include:
+  - _pages
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: assets/css
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Harry"
